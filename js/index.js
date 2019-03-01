@@ -110,10 +110,10 @@ $( document ).ready(function() {
 			console.log("2");
 			//window.location.href = defoultURL + "/" + data;
 			//window.location.href = defoultURL ;
-			window.location.pathname = "";
+			window.location.pathname ="/InteriorDesigner/";
 		} else {
 				//window.location.href = defoultURL + /pages/ + data;
-				window.location.href = "/pages/" + data;
+				window.location.href = "/InteriorDesigner/pages/" + data;
 				console.log(path);
 		}
 		 // 	 {
