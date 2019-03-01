@@ -71,7 +71,7 @@ function closeMenu(){
 
 $( document ).ready(function() {
 	init();
-	var  https = 'https://kmoskala.github.io/InteriorDesigner/';
+	//var  https = 'https://kmoskala.github.io/InteriorDesigner/';
 	
 	$(document.body).click( function() {
 		closeMenu();
@@ -105,7 +105,7 @@ $( document ).ready(function() {
 	 // console.log(path[path.length-1]);
 		// console.log(actualURL);
 		 //var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
-		 var defoultURL = path[0] + "//" + path[2]+ "/" + path[3] + ;
+		 //var defoultURL = path[0] + "//" + path[2]+ "/" + path[3]  ;
 		if( this.dataset.name == "index") {
 			console.log("2");
 			//window.location.href = defoultURL + "/" + data;
