@@ -108,9 +108,9 @@ $( document ).ready(function() {
 		if( this.dataset.name == "index") {
 			console.log("2");
 			//window.location.href = defoultURL + "/" + data;
-			window.location.href = defoultURL ;
+			//window.location.href = defoultURL ;
 		} else {
-				window.location.href = defoultURL + /pages/ + data;
+				//window.location.href = defoultURL + /pages/ + data;
 				console.log(path);
 		}
 		 // 	 {
