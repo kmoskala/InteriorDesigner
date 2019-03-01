@@ -53,6 +53,9 @@ function init() {
 		$("#menuResposive").css('display', 'none');
 		$('header .menuContainer').removeClass("container-fluid").addClass("container");
 		$(".gallery-Menu .one-category").height($(".gallery-Menu .one-category").outerWidth()/2);
+		$("#content .section .realization_container .realization").each(function () {
+			$(this).height($(this).width());
+		});
 	} else {
 		console.log("telef");
 		if (!$('#menuResposive').is(':visible')) {
@@ -61,6 +64,9 @@ function init() {
 		$("#menuNormal").css('display', 'none');
 		$('header .menuContainer').removeClass("container").addClass("container-fluid");
 		$(".gallery-Menu .one-category").height();
+		$("#content .section .realization_container .realization").each(function () {
+			$(this).height(windowHeight-300);
+		});
 	}
 	$("#content .section .one-option, #content .section .one-option div").height($("#content .section .one-option").outerWidth());
 	
@@ -104,8 +110,7 @@ $( document ).ready(function() {
 	 	//var href = window.location.href;
 	 // console.log(path[path.length-1]);
 		// console.log(actualURL);
-		 //var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
-		 //var defoultURL = path[0] + "//" + path[2]+ "/" + path[3]  ;
+		 var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
 		if( this.dataset.name == "index") {
 			console.log("2");
 			//window.location.href = defoultURL + "/" + data;
