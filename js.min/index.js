@@ -71,6 +71,7 @@ function closeMenu(){
 
 $( document ).ready(function() {
 	init();
+	var  https = 'https://kmoskala.github.io/InteriorDesigner/';
 	
 	$(document.body).click( function() {
 		closeMenu();
@@ -109,8 +110,10 @@ $( document ).ready(function() {
 			console.log("2");
 			//window.location.href = defoultURL + "/" + data;
 			//window.location.href = defoultURL ;
+			window.location.pathname = "";
 		} else {
 				//window.location.href = defoultURL + /pages/ + data;
+				window.location.href = "/pages/" + data;
 				console.log(path);
 		}
 		 // 	 {
