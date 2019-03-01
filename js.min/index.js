@@ -89,11 +89,13 @@ $( document ).ready(function() {
 	
 	
 	//nawigacja
-	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
-	console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
+	// var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
+	// console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 
 	 var pathname = window.location.pathname;
 	
+	var actualURL = window.location.protocol +"//"+  window.location.host + "/" + window.location.pathname;
+	 console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 	 $("header ul li,header .menuContainer #menuResposive .logo, footer .logo img, footer .menu div, #content button").click( function () {
 	 	var path = actualURL.split('/');
 	 	console.log(window.location.href);
@@ -101,10 +103,12 @@ $( document ).ready(function() {
 	 	//var href = window.location.href;
 	 // console.log(path[path.length-1]);
 		// console.log(actualURL);
-		 var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
+		 //var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
+		 var defoultURL = path[0] + "//" + path[2]+ "/" + path[3] + ;
 		if( this.dataset.name == "index") {
 			console.log("2");
-			window.location.href = defoultURL + "/" + data;
+			//window.location.href = defoultURL + "/" + data;
+			window.location.href = defoultURL ;
 		} else {
 				window.location.href = defoultURL + /pages/ + data;
 				console.log(path);
