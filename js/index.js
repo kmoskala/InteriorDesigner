@@ -78,6 +78,29 @@ function closeMenu(){
 $( document ).ready(function() {
 	init();
 	//var  https = 'https://kmoskala.github.io/InteriorDesigner/';
+	$(".photo_gallery").owlCarousel({
+		
+		loop:true,
+		margin:5,
+		merge:true,
+		center:true,
+		responsive:{
+			678:{
+				items:2,
+			},
+			998:{
+				items: 3
+			},
+			1200: {
+				items:5
+			}
+		}
+	});
+	
+	$('.photo_gallery .gallery_one_photo img').click(function(){
+		var actual = $(this).attr('src');
+		$('.big_photo').css('background-image', 'url("' + actual + '")');
+	});
 	
 	$(document.body).click( function() {
 		closeMenu();
@@ -96,12 +119,12 @@ $( document ).ready(function() {
 	
 	
 	//nawigacja
-	// var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
+	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
 	// console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 
 	 var pathname = window.location.pathname;
 	
-	var actualURL = window.location.protocol +"//"+  window.location.host + "/" + window.location.pathname;
+	//var actualURL = window.location.protocol +"//"+  window.location.host + "/" + window.location.pathname;
 	 console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 	 $("header ul li,header .menuContainer #menuResposive .logo, footer .logo img, footer .menu div, #content button").click( function () {
 	 	var path = actualURL.split('/');
@@ -113,12 +136,12 @@ $( document ).ready(function() {
 		 var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
 		if( this.dataset.name == "index") {
 			console.log("2");
-			//window.location.href = defoultURL + "/" + data;
+			window.location.href = defoultURL + "/" + data;
 			//window.location.href = defoultURL ;
-			window.location.pathname ="/InteriorDesigner/";
+			// window.location.pathname ="/InteriorDesigner/";
 		} else {
-				//window.location.href = defoultURL + /pages/ + data;
-				window.location.href = "/InteriorDesigner/pages/" + data;
+				window.location.href = defoultURL + /pages/ + data;
+				// window.location.href = "/InteriorDesigner/pages/" + data;
 				console.log(path);
 		}
 		 // 	 {
@@ -168,8 +191,8 @@ $( document ).ready(function() {
 	$("#content .section .one-option").click(function () {
 		var myId = this.dataset.name;
 		
-		if($('#content .section.money table').is(':visible')) {
-			$('#content .section.money table').css('display','none').fadeOut(300);
+		if($('#content .section.money .table').is(':visible')) {
+			$('#content .section.money .table').css('display','none').fadeOut(300);
 			$('#content .section .one-option div').css('opacity', '0.7');
 		}
 		$("#" + myId).css('display', 'block').fadeIn();
@@ -181,6 +204,40 @@ $( document ).ready(function() {
 			$('html, body').animate({
 				scrollTop: $('#'+myId).offset().top
 			}, 700);
+		}
+		
+	});
+	$('.partner_slider').owlCarousel({
+		loop:true,
+		margin:10,
+		autoplay: true,
+		// autoWidth:true,
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 3
+			},
+			998: {
+				items: 6
+			}
+		}
+	});
+	$('.table .option_container .option').click(function () {
+		$('.table .option_container').find(".arrow").each(function () {
+			$(this).removeClass("active");
+		});
+		$('.table .option_container').find(".option_description").each(function () {
+			$(this).slideUp();
+		});
+		if($(this).find('.arrow').hasClass("active")) {
+			$(this).find('.arrow').removeClass("active");
+			$(this).find('.option_description').slideUp();
+		} else {
+			
+			$(this).find('.arrow').addClass("active");
+			$(this).find('.option_description').slideDown();
 		}
 		
 	});
