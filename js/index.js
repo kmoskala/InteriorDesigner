@@ -119,13 +119,13 @@ $( document ).ready(function() {
 	
 	
 	//nawigacja
-	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
+	//var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
 	// console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 
 	 var pathname = window.location.pathname;
 	
-	//var actualURL = window.location.protocol +"//"+  window.location.host + "/" + window.location.pathname;
-	 console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
+	var actualURL = window.location.protocol +"//"+  window.location.host + "/" + window.location.pathname;
+	 //console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 	 $("header ul li,header .menuContainer #menuResposive .logo, footer .logo img, footer .menu div, #content button").click( function () {
 	 	var path = actualURL.split('/');
 	 	console.log(window.location.href);
@@ -136,12 +136,12 @@ $( document ).ready(function() {
 		 var defoultURL = path[0] + "///" + path[2]+ "/" + path[3] + "/" +  path[4]+ "/" + path[5] + "/" +  path[6];
 		if( this.dataset.name == "index") {
 			console.log("2");
-			window.location.href = defoultURL + "/" + data;
+			//window.location.href = defoultURL + "/" + data;
 			//window.location.href = defoultURL ;
-			// window.location.pathname ="/InteriorDesigner/";
+			 window.location.pathname ="/InteriorDesigner/";
 		} else {
-				window.location.href = defoultURL + /pages/ + data;
-				// window.location.href = "/InteriorDesigner/pages/" + data;
+				//window.location.href = defoultURL + /pages/ + data;
+				 window.location.href = "/InteriorDesigner/pages/" + data;
 				console.log(path);
 		}
 		 // 	 {
